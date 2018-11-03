@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+.bgimg {
+    background-image: url("piza.jpg");
+    	height:500px;
+	width:950px ;
+}
+#demo {
+       color: white;
+     
+       padding: 30px;
+       font-size: 50px;
+}
+#leo{
+}
+</style>
+
+<body>
+<div class="bgimg"><center>
+<p id="demo"></cente></p>
+
+<script>
+var buenas = 0;
+var total=0;
+var i=0;
+var result;
+var result_2;
+while(i!=3)
+
+{
+
+var num1=Math.floor(Math.random() * 10);
+var num2=Math.floor(Math.random() * 10);
+var operador=Math.floor(Math.random() * 3);
+
+switch (operador)
+ {
+    case 0:
+        result = num1 +" + "+ num2+ " = "+ Number(num1+ num2);
+		result_2=Number(num1+num2);
+        break;
+    case 1:
+        result = num1 +" - "+ num2+ " = "+ Number(num1- num2);
+		result_2=Number(num1+num2);
+        break;
+    case 2:
+        result = num1 +" X "+ num2+ " = "+ Number(num1* num2);
+		result_2=Number(num1+num2);
+        break;
+  
+}
+
+
+document.getElementById("demo").innerHTML = result + " : <input id=leo type=text >   <input type=submit value=Submit> <button type=button onclick=verifica()>Submit</button>";
+
+
+function verifica()   {
+	var entrada = document.getElementById("leo").value;
+	total++;
+
+	if(entrada == result_2)
+	{
+		Buenas++;
+			alert("Muy Bien Tienes"+ buenas+"Acertada");
+	}
+	else
+	alert("Muy Mal");
+	If (total==2)
+		alert("Promedio es ="+ Buenas+"/"+total);
+}
+i++;
+}
+</script>
+</div>
+</body>
+</html>
